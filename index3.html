@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style3.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+</head>
+
+<body>
+
+  <div class="heading">
+    <h1>Image Gallery</h1>
+  </div>
+
+  <div class="container" id='new-container'>
+  </div>
+
+  <script>
+    const imageUrl = [
+      'https://gas-kvas.com/grafic/uploads/posts/2023-10/1696602052_gas-kvas-com-p-kartinki-s-prirodoi-4.jpg',
+      'https://s1.1zoom.ru/big3/241/431666-Kysb.jpg',
+      'https://gas-kvas.com/grafic/uploads/posts/2023-10/1696602055_gas-kvas-com-p-kartinki-s-prirodoi-11.jpg',
+      'http://vsegda-pomnim.com/uploads/posts/2022-04/1649135702_60-vsegda-pomnim-com-p-prirodnaya-krasota-foto-65.jpg',
+      'https://w.forfun.com/fetch/bc/bcd83647ae601d4622d4dd236011dc59.jpeg',
+      'https://gas-kvas.com/grafic/uploads/posts/2023-10/1696602058_gas-kvas-com-p-kartinki-s-prirodoi-19.jpg',
+      'https://mykaleidoscope.ru/x/uploads/posts/2022-10/1666389937_58-mykaleidoscope-ru-p-klassnaya-priroda-oboi-63.jpg',
+      'http://vsegda-pomnim.com/uploads/posts/2022-04/1649118611_61-vsegda-pomnim-com-p-krasoti-prirodi-mira-foto-68.jpg',
+      'https://ogorodniku.com/uploads/posts/2023-01/1674192816_ogorodniku-com-p-peizazhi-prirodi-foto-3.jpg',
+
+    ];
+
+    let images = [];
+    let container = document.querySelector('.container');
+
+    imageUrl.map((value, index) => {
+      let img = document.createElement('img');
+      img.src = value;
+      img.className = 'image scale';
+      images.push(img);
+    })
+    images.map((value, index) => {
+      container.append(value);
+    })
+  </script>
+
+  <div class="like_button">
+    <p> Если понравилось: </p>
+    <div id="like_button_container"></div>
+  </div>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+
+  <script src="like_button.js"></script>
+
+</body>
+
+</html>
